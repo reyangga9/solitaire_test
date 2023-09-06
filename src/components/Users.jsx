@@ -5,7 +5,7 @@ const Users = ({ users }) => {
   const navigate = useNavigate();
   return (
     <main className="mt-20">
-      <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4">
+      <div className="max-w-4xl mx-auto flex flex-wrap justify-center md:grid md:grid-cols-3 gap-4">
         {users.data?.map((user) => (
           <div
             key={user.id}
