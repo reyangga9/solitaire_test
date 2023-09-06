@@ -2,25 +2,23 @@ import React, { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Users from "../components/Users";
-import { Outlet } from "react-router-dom";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
   let [pageNumber, setPageNumber] = useState(1);
 
-  let fetchUsers = async () => {
-    let response = await fetch(
-      `https://reqres.in/api/users?page=${pageNumber}`
-    );
-    let data = await response.json();
-
-    setUsers(data);
-  };
-
   useEffect(() => {
+    let fetchUsers = async () => {
+      let response = await fetch(
+        `https://reqres.in/api/users?page=${pageNumber}`
+      );
+      let data = await response.json();
+
+      setUsers(data);
+    };
     fetchUsers();
   }, [pageNumber]);
-  console.log(users.total_pages);
+
   return (
     <div>
       <Navbar />
@@ -46,8 +44,6 @@ const Home = () => {
           Page 2
         </button>
       </footer>
-
-      <Outlet />
     </div>
   );
 };

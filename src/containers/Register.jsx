@@ -47,7 +47,7 @@ const Register = () => {
       if (result.error === undefined) {
         navigate("/dashboard");
       } else {
-        alert("Error" + " " + result.error);
+        alert("Error " + result.error);
         alert(
           "Use This example for register successfully email: eve.holt@reqres.in, password: pistol"
         );
@@ -60,17 +60,14 @@ const Register = () => {
   return (
     <section class="bg-gray-50 dark:bg-gray-900">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
-        <a
-          href="#"
-          class="flex items-center mb-6 text-2xl font-semibold  text-cyan-600"
-        >
+        <div class="flex items-center mb-6 text-2xl font-semibold  text-cyan-600">
           <img
             className="w-8 h-8 mr-2"
             src="https://clipart-library.com/images/kiKo9BA4T.png"
             alt="logo"
           />
-          Regent's Park
-        </a>
+          <NavLink to="/dashboard">Regent's Park</NavLink>
+        </div>
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -120,7 +117,7 @@ const Register = () => {
                     className="absolute max-w-[30px]  right-0 max-h-[30px] "
                     onClick={visibility}
                   >
-                    <img src={showPassword ? show : hide} />
+                    <img alt="gmbr" src={showPassword ? show : hide} />
                   </button>
                 </div>
               </div>

@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
-const Users = ({}) => {
+const Users = () => {
   let { userId } = useParams();
   const [user, setUser] = useState([]);
-  let fetchUsers = async () => {
-    let response = await fetch(`https://reqres.in/api/users/${userId}`);
-    let data = await response.json();
 
-    setUser(data.data);
-  };
-  console.log(user);
   useEffect(() => {
+    let fetchUsers = async () => {
+      let response = await fetch(`https://reqres.in/api/users/${userId}`);
+      let data = await response.json();
+
+      setUser(data.data);
+    };
     fetchUsers();
   }, [userId]);
+  console.log(user);
 
-  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -30,7 +30,7 @@ const Users = ({}) => {
               <img
                 class="w-24 h-24 mb-3 rounded-full shadow-lg"
                 src={user.avatar}
-                alt="Bonnie image"
+                alt="Bonnie"
               />
               <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
                 {user.first_name} {user.last_name}
