@@ -15,8 +15,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Home />}></Route>
-      <Route path="dashboard/:userId" element={<User />} />
       <Route path="register" element={<Register />}></Route>
+      <Route path="/:userId" element={<User />} />
     </Route>
   )
 );

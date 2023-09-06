@@ -46,7 +46,7 @@ const Navbar = () => {
                 class="block py-2 pl-3 pr-4 text-white hover:bg-slate-200 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-3 dark:text-white md:dark:text-blue-500"
                 aria-current="page"
               >
-                <NavLink to="/dashboard">Home</NavLink>
+                <NavLink to="/">Home</NavLink>
               </p>
             </li>
             <li>

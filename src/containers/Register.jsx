@@ -45,7 +45,7 @@ const Register = () => {
       const result = await response.json();
       console.log(!result.error);
       if (result.error === undefined) {
-        navigate("/dashboard");
+        navigate("/");
       } else {
         alert("Error " + result.error);
         alert(
@@ -130,11 +130,8 @@ const Register = () => {
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Want to check our websiste?{" "}
-                <p
-                  to="/dashboard"
-                  class="font-medium inline text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  <NavLink to="/dashboard">Home</NavLink>
+                <p class="font-medium inline text-primary-600 hover:underline dark:text-primary-500">
+                  <NavLink to="/">Home</NavLink>
                 </p>
               </p>
             </form>
