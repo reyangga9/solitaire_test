@@ -14,8 +14,8 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="dashboard" element={<Home />}></Route>
-      <Route path="/dashboard/:userId" element={<User />} />
+      <Route index element={<Home />}></Route>
+      <Route path="dashboard/:userId" element={<User />} />
       <Route path="register" element={<Register />}></Route>
     </Route>
   )
